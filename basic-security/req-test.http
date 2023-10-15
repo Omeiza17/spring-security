@@ -1,0 +1,6 @@
+// User endpoint only availabl for users with USER role
+GET http://localhost:8081/user
+Authorization: Basic user P@ssw0rd
+###
+GET http://localhost:8081/admin
+Authorization: Basic admin P@ssw0rd
