@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+basic-security/.mvn/wrapper/
+jdbc-security/.mvn/wrapper/
+
 ### IntelliJ IDEA ###
 .idea/
 *.iws
