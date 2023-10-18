@@ -20,6 +20,7 @@
     <modules>
         <module>basic-security</module>
         <module>jdbc-security</module>
+        <module>jpa-security</module>
     </modules>
 
     <dependencyManagement>

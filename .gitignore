@@ -5,6 +5,7 @@ target/
 
 basic-security/.mvn/wrapper/
 jdbc-security/.mvn/wrapper/
+jpa-security/.mvn/wrapper/
 
 ### IntelliJ IDEA ###
 .idea/

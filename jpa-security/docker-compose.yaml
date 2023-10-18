@@ -1,0 +1,12 @@
+version: '3,9'
+
+services:
+  jpa-security-db:
+    image: bitnami/postgresql:latest
+    container_name: jpa-security
+    environment:
+      POSTGRESQL_DATABASE: blog
+      POSTGRESQL_USERNAME: spring
+      POSTGRESQL_PASSWORD: security
+    ports:
+      - "5432:5432"
