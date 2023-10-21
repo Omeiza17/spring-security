@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class JpaSecurityApplication {
@@ -17,10 +18,10 @@ public class JpaSecurityApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(PostRepository posts, UserRepository users) {
+    CommandLineRunner commandLineRunner(PostRepository posts, UserRepository users, PasswordEncoder encoder) {
         return args -> {
-            users.save(new User("admin", "P@ssw0rd", "ROLE_USER, ROLE_ADMIN"));
-            users.save(new User("user", "P@ssw0rd", "ROLE_USER"));
+            users.save(new User("admin", encoder.encode("P@ssw0rd"), "ROLE_USER, ROLE_ADMIN"));
+            users.save(new User("user", encoder.encode("P@ssw0rd"), "ROLE_USER"));
             posts.save(
                     new Post("Hello, World!", "Spring Greetings",
                             "Welcome to the world of Spring Security",
