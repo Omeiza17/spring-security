@@ -1,5 +1,6 @@
 package dev.codingstoic.jpasecurity;
 
+import dev.codingstoic.jpasecurity.config.RsaKeyProperties;
 import dev.codingstoic.jpasecurity.model.Post;
 import dev.codingstoic.jpasecurity.model.User;
 import dev.codingstoic.jpasecurity.repository.PostRepository;
@@ -7,10 +8,12 @@ import dev.codingstoic.jpasecurity.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
+@EnableConfigurationProperties(RsaKeyProperties.class)
 public class JpaSecurityApplication {
 
     public static void main(String[] args) {

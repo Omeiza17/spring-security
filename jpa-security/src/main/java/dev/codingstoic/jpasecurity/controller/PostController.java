@@ -17,7 +17,7 @@ public class PostController {
     }
 
     @GetMapping
-    private Iterable<Post> findAll() {
+    public Iterable<Post> findAll() {
         return this.posts.findAll();
     }
 
