@@ -1,4 +1,4 @@
-package dev.codingstoic.jpasecurity.model;
+package dev.codingstoic.jpasecurity.dto;
 
 public record LoginResponse(String token) {
 }

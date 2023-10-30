@@ -1,2 +1,8 @@
 server:
   port: 8083
+spring:
+  datasource:
+    generate-unique-name: false
+    url: jdbc:postgresql://localhost:5432/blog
+    username: spring
+    password: security

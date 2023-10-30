@@ -1,7 +1,7 @@
 package dev.codingstoic.jpasecurity.controller;
 
-import dev.codingstoic.jpasecurity.model.LoginRequest;
-import dev.codingstoic.jpasecurity.model.LoginResponse;
+import dev.codingstoic.jpasecurity.dto.LoginRequest;
+import dev.codingstoic.jpasecurity.dto.LoginResponse;
 import dev.codingstoic.jpasecurity.service.TokenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,8 +23,8 @@ public class AuthController {
         this.authenticationManager = authenticationManager;
     }
 
-    @PostMapping("/token")
-    public ResponseEntity<LoginResponse> token(@RequestBody LoginRequest userLogin) throws AuthenticationException {
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest userLogin) throws AuthenticationException {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userLogin.username(), userLogin.password()));
         return ResponseEntity.ok(new LoginResponse(tokenService.generateToken(authentication)));
     }
